@@ -1,0 +1,156 @@
+/*Responsive Navbar 
+
+Created by: Aminu Babayo Shehu
+            https://github.com/absheikh
+*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: sans-serif;
+  background-color: #e6ebe0;
+}
+
+header nav {
+  background-color: #2a2726;
+  padding: 5px 20px;
+}
+header ul {
+  list-style-type: none;
+}
+header ul li a {
+  color: #f2f2f2;
+  text-decoration: none;
+}
+header ul li a:hover {
+  text-decoration: underline;
+}
+header .menu li {
+  font-size: 16px;
+  padding: 15px 5px;
+}
+header .menu li a {
+  display: block;
+}
+header .logo a {
+  font-size: 20px;
+}
+header .button.secondary {
+  border-bottom: 1px #f2f2f2 solid;
+}
+
+/* Mobile Menu */
+header .menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+header .toggle {
+  order: 1;
+}
+header .item.button {
+  order: 2;
+}
+header .item {
+  width: 100%;
+  text-align: center;
+  order: 3;
+  display: none;
+}
+header .item.active {
+  display: block;
+  transition: all 152s;
+}
+header .toggle {
+  cursor: pointer;
+}
+header .bars {
+  background: #f2f2f2;
+  display: inline-block;
+  height: 2px;
+  width: 18px;
+  position: relative;
+}
+header .bars::before,
+header .bars::after {
+  content: " ";
+  background: #f2f2f2;
+  display: inline-block;
+  height: 2px;
+  width: 18px;
+  position: absolute;
+}
+header .bars::before {
+  top: 5px;
+}
+header .bars::after {
+  top: -5px;
+}
+
+/* //Tablet Menu */
+@media all and (min-width: 468px) {
+  header .menu {
+    justify-content: center;
+  }
+  header .logo {
+    flex: 1;
+  }
+  header .item.button {
+    width: auto;
+    order: 1;
+    display: block;
+  }
+  header .toggle {
+    order: 2;
+  }
+  header .button.secondary {
+    border: 0;
+  }
+  header .button a {
+    padding: 7px 15px;
+    background: teal;
+    border: 1px solid #006d6d;
+    border-radius: 50em;
+  }
+  header .button.secondary a {
+    background: transparent;
+  }
+  header .button a:hover {
+    text-decoration: none;
+    transition: all 0.25s;
+  }
+  header .button:not(.secondary) a:hover {
+    background: #006d6d;
+    border-color: #005959;
+  }
+  header .button.secondary a:hover {
+    color: #ddd;
+  }
+}
+
+/* Desktop  */
+@media all and (min-width: 768px) {
+  header .item {
+    display: block;
+    width: auto;
+  }
+  header .toggle {
+    display: none;
+  }
+  header .logo {
+    order: 0;
+  }
+  header .item {
+    order: 1;
+  }
+  header .button {
+    order: 2;
+  }
+  header .menu li.button {
+    padding-right: 0;
+  }
+}
